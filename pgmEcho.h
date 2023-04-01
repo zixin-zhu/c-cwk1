@@ -22,5 +22,8 @@
 
 
 #ifndef main
-int main(int argc, char **argv,int write_return);
+int main(int argc, char **argv);
+int read_file(char * filename ,PGM * pgm);
+int write_tofile(char * filename, PGM *pgm);
+int exitMessage(int code,char * filename); 
 #endif

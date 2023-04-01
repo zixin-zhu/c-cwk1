@@ -26,7 +26,7 @@
 
 #include "pgmStruct.h"
 
-
+#include "pgmEcho.h"
 
 /***********************************/
 /* main routine                    */
@@ -51,14 +51,13 @@ int main(int argc, char **argv)
 	if (argc == 1)
 	{/*no wrong*/
 	   /*return without error and print the successful message*/
-		printf(USAGE_FORMAT_STRING, argv[0]);
 		return EXIT_NO_ERRORS;
 	}
 
     /* the struct will be what stores the pgm file's data**/
     PGM * pgm = (PGM * ) malloc(sizeof(PGM));
-    // verify that the memory was allocated correctly
-    if (pgm == NULL) // malloc failed so return malloc error code and message
+
+    if (pgm == NULL) 
 	    return exitMessage(EXIT_IMAGE_MALLOC_FAILED, NULL);
 
     /*get the data from the file into the the pgm struct**/
@@ -76,22 +75,6 @@ int main(int argc, char **argv)
 }
 
 
-
-
-
-
-
-
-	/* variables for storing the image       */
-	/* this is NOT good modularisation       */
-	/* and you will eventually replace it    */
-	/* for now, leave it here                */
-
-	/* the magic number		         */
-	/* stored as two bytes to avoid	         */
-	/* problems with endianness	         */
-	/* Raw:    0x5035 or P5		         */
-	/* ASCII:  0x5032 or P2		         */
 
 
 
